@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String Length Calculator</title>
+</head>
+<body>
+
+<h1>String Length Calculator</h1>
+<label for="inputString">Enter a string:</label>
+<input type="text" id="inputString" />
+<button id="calculateButton">Calculate Length</button>
+
+<p id="result"></p>
+
+<script>
+    const calculateButton = document.getElementById('calculateButton');
+    const inputString = document.getElementById('inputString');
+    const result = document.getElementById('result');
+
+    calculateButton.addEventListener('click', function() {
+        const length = inputString.value.length; // Calculate length including spaces
+        result.textContent = `Length of the string (including spaces): ${length}`;
+    });
+</script>
+
+</body>
+</html>
