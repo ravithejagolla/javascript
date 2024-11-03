@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animal Image Selector</title>
+    <style>
+        img {
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Select an Animal</h1>
+<select id="animalSelector">
+    <option value="dog">Dog</option>
+    <option value="cat">Cat</option>
+    <option value="elephant">Elephant</option>
+    <option value="lion">Lion</option>
+</select>
+
+<img id="animalImage" src="https://img.freepik.com/premium-photo/cute-little-puppy-pets-dog_483438-38.jpg?w=360" alt="Animal Image">
+
+<script>
+    const animalSelector = document.getElementById('animalSelector');
+    const animalImage = document.getElementById('animalImage');
+
+    const animalImages = {
+        dog: 'https://img.freepik.com/premium-photo/cute-little-puppy-pets-dog_483438-38.jpg?w=360',  
+        cat: 'https://media.istockphoto.com/id/1443562748/photo/cute-ginger-cat.jpg?s=612x612&w=0&k=20&c=vvM97wWz-hMj7DLzfpYRmY2VswTqcFEKkC437hxm3Cg=',  
+        elephant: 'https://cdn.pixabay.com/photo/2022/11/30/20/41/elephant-7627674_960_720.jpg', 
+        lion:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrOunpvF6cRJnnrnfpFksyRMhWcQyJfivzAQ&s" 
+    };
+
+    animalSelector.addEventListener('change', function() {
+        const selectedAnimal = animalSelector.value;
+        animalImage.src = animalImages[selectedAnimal];
+    });
+
+    // Set the default image to Dog
+    animalImage.src = animalImages['dog'];
+</script>
+
+</body>
+</html>
