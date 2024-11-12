@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Movies</title>
+    <style>
+        img{
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+    <img id="slideshow" src="" alt="Movie Slideshow">
+</body>
+</html>
+<script>
+    // Array of image URLs for the slideshow
+const images = [
+  'https://gallery.123telugu.com/content/slideshows/2024/9/Devara9/images/13.jpg',
+  'https://m.media-amazon.com/images/M/MV5BYjc1MzJiYTMtY2UxNS00NjBjLWJiOWItY2U2MmYwNWQzMzU4XkEyXkFqcGc@._V1_.jpg',
+  'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVXArZJ9LX5PRDNQ8R045amkC4lQGOFPYmrg&s',
+  'https://upload.wikimedia.org/wikipedia/en/thumb/0/0c/OG_Poster.jpg/220px-OG_Poster.jpg'
+  
+];
+
+// Get the image element from the DOM
+const imageElement = document.getElementById('slideshow');
+
+// Function to display a random image from the array
+function showRandomImage() {
+  const randomIndex = Math.floor(Math.random() * images.length);
+  imageElement.src = images[randomIndex];
+}
+
+// Set interval to change the image every 2000ms (2 seconds)
+setInterval(showRandomImage, 2000);
+
+showRandomImage();
+</script>
